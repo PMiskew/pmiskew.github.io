@@ -1,72 +1,79 @@
-<!-- Welcome to some sample code to control your Firebase Database -->
-<!-- HERE IS YOUR HTML TO SET UP YOUR PAGE -->
+<!DOCTYPE html>
 <html>
-    <head>
-        <!-- HERE ARE YOUR FIREBASE and GOOGLE AUTHENICATION IMPORTS -->
-        <!-- The core Firebase JS SDK is always required and must be listed first -->
-        <script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-app.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-analytics.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-auth.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-database.js"></script>
-        <script src="https://apis.google.com/js/platform.js" async defer></script>
-       
-        <!-- Add SDKs for Firebase products that you want to use 
-          https://firebase.google.com/docs/web/setup#available-libraries -->
- 
-             <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<head>
+	<title>Goolge Auth Demo</title>
 
+	<!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
     <style>
+    	#div1 {
 
-        #div1 {
-            min-height: 100vh; /* use "vh" instead of % */
-         
-        }
+    		padding: 10px 0px;
+    	}
+
     </style>
-    </head>
+</head>
+<body class = "red lighten-1">
+	
+	<div class = "container">
+		<div class = "center-align" id = "div1">
+			<a id = "btn" class="waves-effect waves-light btn-large">Login</a>
+		</div>
+	</div>
 
-    <body class  = "red lighten-1" >
-       
-        
-            <!-- HERE IS THE JAVASCRIPT TO CONNECT TO YOUR FIREBASE -->
-        <script>
 
-            // Variables created here to be used throughout the program
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-auth.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+   
+	
+	<script>
 
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        var firebaseConfig = {
+            apiKey: "AIzaSyCjLwC8WqlKrJ6WiWQZirE6H_thzjKKDU4",
+            authDomain: "dpcsyear11authdemo.firebaseapp.com",
+            databaseURL: "https://dpcsyear11authdemo.firebaseio.com",
+            projectId: "dpcsyear11authdemo",
+            storageBucket: "dpcsyear11authdemo.appspot.com",
+            messagingSenderId: "836576531142",
+            appId: "1:836576531142:web:ea858c416182b0cda8bdc7",
+            measurementId: "G-G5E3V32RYD"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        //firebase.analytics();
+
+        function signin() {
             var provider = new firebase.auth.GoogleAuthProvider();
-            var userId = document.getElementById("uid").innerHTML;
-            
-        
-
-            // Your web app's Firebase configuration
-            // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-            var config = {
-                apiKey: "AIzaSyDFC8cruaH0CEWtcXr7PPhuAa-lmPac4SM",
-                authDomain: "year10design2020demo.firebaseapp.com",
-                databaseURL: "https://year10design2020demo.firebaseio.com",
-                projectId: "year10design2020demo",
-                storageBucket: "year10design2020demo.appspot.com",
-                messagingSenderId: "471031211596",
-                appId: "1:471031211596:web:6bf9cb29a09e05a12e36e9",
-                measurementId: "G-R8CC4NMHYS"
-            };
-            
-            // Initialize Firebase
-            firebase.initializeApp(config);
+            firebase.auth().signInWithRedirect(provider).then(function(result) { 
+                window.location.replace("fbtest.html");
+            });
+        } // end signin 
 
 
-            function signin() {
-                var provider = new firebase.auth.GoogleAuthProvider();
-                firebase.auth().signInWithRedirect(provider).then(function(result) { 
-                    window.location.replace("fbtest.html");
-                });
-            } // end signin 
 
 
-        </script>
 
-    </body>
+
+
+        M.AutoInit();
+        M.toast({html: 'Login and Explore'})
+
+		element = document.getElementById("btn")
+
+		$(document).ready(function(){
+  			$(element).bind("click", signin)
+		});
+
+	</script>
+</body>
 </html>
