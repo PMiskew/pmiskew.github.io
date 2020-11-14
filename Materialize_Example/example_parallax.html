@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		
+	</title>
+
+	   <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+<body>
+
+
+	<script src ="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    
+	<div class="parallax-container">
+		<div class="parallax" style = "width: 100%; height: 100%;"><img src="images/1_Hydrogen.jpg"></div>
+	</div>
+	<div class="parallax-container">
+		<div class="parallax"><img src="images/2_Helium.jpg"></div>
+	</div>
+	<div class="parallax-container">
+		<div class="parallax"><img src="images/3_Lithium.jpg"></div>
+	</div>
+	<div class="parallax-container">
+		<div class="parallax"><img src="images/4_Beryllium.jpg"></div>
+	</div>
+	<div class="parallax-container">
+		<div class="parallax"><img src="images/5_Boron.jpg"></div>
+	</div>
+
+
+
+
+    <script>
+
+
+	  document.addEventListener('DOMContentLoaded', function() {
+	    var elems = document.querySelectorAll('.parallax');
+	    var instances = M.Parallax.init(elems, options);
+	  });
+
+	  // Or with jQuery
+
+	  $(document).ready(function(){
+	    $('.parallax').parallax();
+	  });
+
+
+    </script>
+</body>
+</html>

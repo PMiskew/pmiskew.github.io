@@ -61,9 +61,29 @@ function countPeaks(d) {
 	return count
 }
 
-console.log(roundAverageElevation(DATA1))
-console.log(countPeaks(DATA1))
 
+function isolateRange(d,a,b) {
+
+	result = []
+	
+	for (i = 0; i < d.length; i = i + 1) {
+
+		if (i < a || i > b) {
+			result.push(0)
+		}
+		else {
+			result.push(d[i])
+		}
+
+	}
+
+	return result
+}
+
+//console.log(roundAverageElevation(DATA1))
+//console.log(countPeaks(DATA1))
+
+console.log(isolateRange(DATA1,3,7))
 
 
 

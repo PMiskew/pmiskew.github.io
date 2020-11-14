@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		
+	</title>
+
+	   <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+<body>
+
+	<div class = "container">
+	<!-- Modal Trigger -->
+		<a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
+
+	</div>
+	<!-- Modal Structure -->
+	<div id="modal1" class="modal">
+		<div class="modal-content">
+			<h4>Modal Header</h4>
+			<p>A bunch of text</p>
+		</div>
+		<div class="modal-footer">
+			<a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+		</div>
+	</div>
+	<script src ="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+     
+    <script>
+
+    	
+    	options = {dismissible: false}
+		document.addEventListener('DOMContentLoaded', function() {
+			var elems = document.querySelectorAll('.modal');
+			var instances = M.Modal.init(elems, options);
+		});
+		//*/
+		// Or with jQuery
+		/*
+
+		$(document).ready(function(){
+			$('.modal').modal();
+		});
+		//*/
+    </script>     
+</body>
+</html>

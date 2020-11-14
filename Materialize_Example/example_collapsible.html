@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		
+	</title>
+
+	   <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+<body>
+
+	<div class="container">
+
+	<h4>Accordion with Preselected Section</h4>
+	<ul class="collapsible" data-collapsible = "accordion">
+		<li>
+			<div class="collapsible-header"><i class="material-icons">filter_drama</i>First</div>
+			<div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+		</li>
+		<li>
+			<div class="collapsible-header active"><i class="material-icons">place</i>Second</div>
+			<div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+		</li>
+		<li>
+			<div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
+			<div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+		</li>
+	</ul>
+	<br/>
+	<ul class="collapsible popout">
+		<li>
+			<div class="collapsible-header"><i class="material-icons">filter_drama</i>First</div>
+			<div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+		</li>
+		<li>
+			<div class="collapsible-header"><i class="material-icons">place</i>Second</div>
+			<div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+		</li>
+		<li>
+			<div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
+			<div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+		</li>
+	</ul>
+	<br/>
+	<ul class="collapsible">
+		<li>
+			<div class="collapsible-header"><i class="material-icons">filter_drama</i>First</div>
+			<div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+		</li>
+		<li>
+			<div class="collapsible-header"><i class="material-icons">place</i>Second</div>
+			<div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+		</li>
+		<li>
+			<div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
+			<div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+		</li>
+	</ul>
+	</div>
+
+	<script src ="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+       
+    <script>
+    	
+    	options = {
+    		
+    		onOpenEnd: function() {
+    			console.log("opening")
+    		},
+    		onCloseEnd: function() {
+    			console.log("closing")
+    		}
+    		
+    	}
+    	
+
+		document.addEventListener('DOMContentLoaded', function() {
+		
+			var elems = document.querySelectorAll('.collapsible');
+			var instances = M.Collapsible.init(elems, options);
+		
+		});
+
+
+
+		
+
+		//*/
+		/*
+		
+		$(document).ready(function(){
+			$('.collapsible').collapsible(
+				{accordian:false,
+
+				});
+		
+		});
+
+  /* jQuery Method Calls
+    You can still use the old jQuery plugin method calls.
+    But you won't be able to access instance properties.
+
+    $('.collapsible').collapsible('methodName');
+    $('.collapsible').collapsible('methodName', paramName);
+  */
+
+
+		//*/
+  	</script>     
+</body>
+</html>

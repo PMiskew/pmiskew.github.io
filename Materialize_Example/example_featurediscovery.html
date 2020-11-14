@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		
+	</title>
+
+	   <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+	  <!-- Element Showed -->
+	
+</head>
+<body>
+
+
+	<div class = "container">
+		<a class="waves-effect waves-light btn" onclick="$('.tap-target').tapTarget('open')">Open tap target</a>
+		<a class="waves-effect waves-light btn" onclick="$('.tap-target').tapTarget('close')">Close tap target</a>
+		
+	</div>     
+
+
+	<div class = "tap-target-wrapper" style = "right: -348px; bottom: -327px; position: fixed;">
+	<!-- Tap Target Structure -->
+	<div class="tap-target" data-target="menu">
+			<div class="tap-target-content white-text" style="width: 456px; height: 400px; top: 0px; right: 0px; bottom: 0px; left: 0px; padding: 56px; vertical-align: bottom;">
+				
+				<h5>Title</h5>
+				<p>A bunch of text</p>
+			
+			</div>
+		</div>
+	</div>
+
+
+
+  	<!-- Element Showed -->
+  	<div class = "fixed-action-btn direction-top active" style="bottom: 45px right: 24px;">
+  		<a id="menu" class="waves-effect waves-light btn btn-floating" ><i class="material-icons">menu</i></a>
+	</div>
+
+
+	<script src ="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+            
+    <script>
+    	
+    	options = {}
+		document.addEventListener('DOMContentLoaded', function() {
+			var elems = document.querySelectorAll('.tap-target');
+			var instances = M.TapTarget.init(elems, options);
+		});
+		//*/
+
+		// Or with jQuery
+		/*
+
+		$(document).ready(function(){
+			$('.tap-target').tapTarget();
+
+		});
+
+		//*/
+		</script>
+</body>
+</html>

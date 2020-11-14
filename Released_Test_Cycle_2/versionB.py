@@ -60,6 +60,22 @@ def countPeaks(d):
 
 	return count
 
+def isolateRange(d,a,b):
+
+	result = []
+	
+	for i in range(0, len(d), 1):
+
+		if (i < a or i > b):
+			result.push(0)
+		else:
+			result.push(d[i])
+		
+
+	
+
+	return result
+
 
 print(roundAverageElevation(DATA1))
 print(countPeaks(DATA1))

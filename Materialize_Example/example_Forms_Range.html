@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		
+	</title>
+
+	   <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+	<link href="resources/nouislider.min.css" rel="stylesheet">
+
+
+	<div class = "container">
+		<h1>Slider</h1>
+ 		<div id="test-slider"></div>
+
+
+ 		<h1>HTML 5 Slider</h1>
+ 		<form action="#">
+    		<p class="range-field">
+      			<input type="range" id="test5" min="0" max="100" />
+    		</p>
+  		</form>
+ 	</div>
+
+ 	
+</head>
+<body>
+
+
+	<script src ="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+
+	<script src="resources/nouislider.min.js"></script>
+
+
+
+    
+    <script>
+		
+		var slider = document.getElementById('test-slider');
+		noUiSlider.create(slider, {
+			start: [20, 80],
+			connect: true,
+			step: 1,
+			orientation: 'horizontal', // 'horizontal' or 'vertical'
+			range: {
+		 		'min': 0,
+		 		'max': 100
+			}
+		
+			});
+		    
+
+    </script>
+</body>
+</html>

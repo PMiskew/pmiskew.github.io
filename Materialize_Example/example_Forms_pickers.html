@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		
+	</title>
+
+	   <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+	<div class = "container">
+		<h1>Date Picker</h1>
+		<input type="text" class="datepicker">
+
+		<h1>Time Picker</h1>
+		<input type="text" class="timepicker">
+	</div>
+</head>
+<body>
+
+
+	<script src ="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+       
+
+    <script>
+
+    	optionDP = {
+
+
+    	}
+
+    	optionTP = {
+
+    		
+    	}
+    	//Date Picker Initalization
+		document.addEventListener('DOMContentLoaded', function() {
+			var elemsDP = document.querySelectorAll('.datepicker');
+			var instances = M.Datepicker.init(elemsDP, options);
+			var elemsTP = document.querySelectorAll('.timepicker');
+			var instances = M.Timepicker.init(elemsTP, options);
+	
+		});
+
+		// Or with jQuery
+
+		$(document).ready(function(){
+			$('.datepicker').datepicker();
+			$('.timepicker').timepicker();
+	
+		});
+
+		//Time Picker Initalization
+		document.addEventListener('DOMContentLoaded', function() {
+		});
+
+		// Or with jQuery
+
+		$(document).ready(function(){
+		});
+
+    </script>     
+</body>
+</html>
