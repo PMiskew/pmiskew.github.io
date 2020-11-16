@@ -10,7 +10,7 @@ var uNames = []
 var pWords = []
 
 
-let url = "https://github.com/PMiskew/pmiskew.github.io/blob/main/JS_Example/logindata.json"
+let url = "https://jsonplaceholder.typicode.com/users"
 fetch(url, {
 	 
 	})
