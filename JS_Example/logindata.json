@@ -1,14 +1,11 @@
 [
 	{
-		userid: "user1@test.com",
-		password: "pword1"
+		"userid" : "user1@test.com",
+		"password" : "pword1"
 	},
-
 	{
-		userid: "user1@test.com",
-		password: "pword1"
+		"userid": "user1@test.com",
+		"password": "pword1"
 	},
-
-
 
 ]
