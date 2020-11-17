@@ -6,8 +6,29 @@
 
 
 //JS: let, var, const
-var uNames = ["user1","user2","user3"]
-var pWords = ["pword1","pword2","pword3"]
+var uNames = []
+var pWords = []
+
+//On the load of my page I am going to go out and access all
+//of the data from my json file and update my lists. 
+
+//Theory: We need to understand ASYNC process and a "promise"
+
+var url = "https://raw.githubusercontent.com/PMiskew/pmiskew.github.io/main/JS_Example/logindata.json"
+
+//fetch -> return a promise, a promise is an object that you can check before you do things
+//then -> only run this code when the fetch is done. 
+fetch(url, { })
+	.then(response => response.json())
+	.then(result => {
+		console.log(result)
+		//10 minutes - Find a way to copy the data from result
+		//into each of the array uNames and pWords
+		
+
+		//Loop through result and update uNames and pWords
+	});
+
 
 
 function checkLogin(u, p) {

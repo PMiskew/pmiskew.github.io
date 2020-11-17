@@ -10,13 +10,14 @@ var uNames = []
 var pWords = []
 
 
-let url = "https://jsonplaceholder.typicode.com/users"
+let url = "https://raw.githubusercontent.com/PMiskew/pmiskew.github.io/main/JS_Example/logindata.json"
 fetch(url, {
 	 
 	})
 	.then(response => response.json())
 	.then(result => {
 		console.log(result)
+		//Loop through result and update uNames and pWords
 	})
 	.catch(error => {
 	  console.error('Error:', error);
