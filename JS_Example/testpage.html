@@ -14,9 +14,30 @@
 <body>
 
 
-	<div id = "landing" class = "container">
+	<div id = "landing" class = "container" style = "display: none;" >
 		<h2>Login</h2>
 		<a href = "#modal-login" class = "btn orange modal-trigger">LOGIN</a>
+	</div>
+
+	<div id = "home" >
+
+
+		<nav>
+			<div class="nav-wrapper">
+				<a href="#" class="brand-logo" style = "padding-left: 10px">Logo</a>
+					<ul id="nav-mobile" class="right hide-on-med-and-down">
+						<li><a href="sass.html">Sass</a></li>
+						<li><a href="badges.html">Components</a></li>
+						<li><a id = "logoutBTN" class="waves-effect waves-light btn" href="#">Logout</a></li>
+						</ul>
+			</div>
+		</nav>
+		<div class="container">
+			<h1>Welcome</h1>
+		</div>
+
+
+		
 	</div>
 
 	<div id = "modal-login" class = "modal">
@@ -50,30 +71,53 @@
 
 		//Add a function to the modal to check the password
 
+		var landingPage = document.getElementById("landing")
+		var homePage = document.getElementById("home")
+
 
 		$(document).ready(function(){
-			$('.modal').modal();
+			$('.modal').modal();				
+		});
 
 
-			$('#login-form').submit(function (e){
+		$('#login-form').submit(function (e){
 
 				e.preventDefault();//stops the page from reloading
 				console.log("SUBMIT")
 				//Get user name
-
+				u = document.getElementById("login-email").value
+				document.getElementById("login-email").value = ""
 				//Get password
-
+				p = document.getElementById("login-password").value
+				document.getElementById("login-password").value = ""
 				//Pass it to the function to check if valid
-
-
+				result = checkLogin(u,p)
+				console.log(result)
 				//make decision about what to do
+				if (result === true) {
+					currU = u
+					landingPage.style.display = "none"
+					homePage.style.display = "block"
+					currU = u;
+
+				}
+				else {
+					M.toast({html: 'INVALID LOGIN!'})
+				}
 
 
 				$('#modal-login').modal("close"); //close the m
 
 			})
-				
-		});
+
+		$('#logoutBTN').click(function(e) {
+			console.log("clicked")
+			landingPage.style.display = "block"
+			homePage.style.display = "none"
+			currU = ""
+					
+
+		})
 	</script>
 
 

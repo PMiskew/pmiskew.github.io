@@ -9,6 +9,11 @@
 var uNames = []
 var pWords = []
 
+var currU = ""
+
+
+
+
 //On the load of my page I am going to go out and access all
 //of the data from my json file and update my lists. 
 
