@@ -41,14 +41,39 @@
 
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+	<!--
+	This runs the login_fake_class2.js
+	-->
 	<script src = "login_fake_class2.js"></script>
 
 	<script>
 
+		//Add a function to the modal to check the password
+
+
 		$(document).ready(function(){
 			$('.modal').modal();
-		});
 
+
+			$('#login-form').submit(function (e){
+
+				e.preventDefault();//stops the page from reloading
+				console.log("SUBMIT")
+				//Get user name
+
+				//Get password
+
+				//Pass it to the function to check if valid
+
+
+				//make decision about what to do
+
+
+				$('#modal-login').modal("close"); //close the m
+
+			})
+				
+		});
 	</script>
 
 

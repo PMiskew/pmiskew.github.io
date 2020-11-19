@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		
+	</title>
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+   
+            
+</head>
+<body>
+
+	<nav>
+		<div class="nav-wrapper">
+			<a href="#" class="brand-logo">Logo</a>
+				<ul id="nav-mobile" class="right hide-on-med-and-down">
+				<li><a href="sass.html">Sass</a></li>
+				<li><a href="badges.html">Components</a></li>
+				<li><a href="collapsible.html">JavaScript</a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<div class="container">
+		<a id = "logoutBTN" class="waves-effect waves-light btn">button</a>
+	</div>
+ 	<!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+
+	<!-- The core Firebase JS SDK is always required and must be listed first -->
+	<script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-app.js"></script>
+
+	<!-- TODO: Add SDKs for Firebase products that you want to use
+	     https://firebase.google.com/docs/web/setup#available-libraries -->
+	<script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-analytics.js"></script>
+
+	<script>
+  		
+  		// Your web app's Firebase configuration
+		// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+		var firebaseConfig = {
+			apiKey: "AIzaSyCjLwC8WqlKrJ6WiWQZirE6H_thzjKKDU4",
+			authDomain: "dpcsyear11authdemo.firebaseapp.com",
+			databaseURL: "https://dpcsyear11authdemo.firebaseio.com",
+			projectId: "dpcsyear11authdemo",
+			storageBucket: "dpcsyear11authdemo.appspot.com",
+			messagingSenderId: "836576531142",
+			appId: "1:836576531142:web:ea858c416182b0cda8bdc7",
+			measurementId: "G-G5E3V32RYD"
+		};
+		// Initialize Firebase
+		firebase.initializeApp(firebaseConfig);
+		//firebase.analytics();
+
+		const auth = firebase.auth();
+
+		function signIn() {
+
+			var provider = new firebase.auth.GoogleAuthProvider();
+
+			firebase.auth().signInWithRedirect(provider).then(function(result) { 
+
+				//document.getElementById("uid").innerHTML = userId; // display Google uid on page
+
+			});
+
+		} // end signin 
+
+
+		function signOut() {
+
+			firebase.auth().signOut();
+
+		}
+
+		var logoutBTN = document.getElementById("logoutBTN")
+
+		logoutBTN.addEventListener("click",signOut);
+
+	</script>
+    
+
+    <script src = "scripts/class_demo.html"></script>
+
+
+
+</body>
+</html>

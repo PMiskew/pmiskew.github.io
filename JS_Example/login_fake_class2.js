@@ -21,10 +21,16 @@ var url = "https://raw.githubusercontent.com/PMiskew/pmiskew.github.io/main/JS_E
 fetch(url, { })
 	.then(response => response.json())
 	.then(result => {
-		console.log(result)
+
+		for (i = 0; i < result.length; i = i + 1) {
+			uNames.push(result[i]["id"])
+			pWords.push(result[i]["password"])
+		}
+
 		//10 minutes - Find a way to copy the data from result
 		//into each of the array uNames and pWords
-		
+		console.log(uNames)
+		console.log(pWords)
 
 		//Loop through result and update uNames and pWords
 	});
@@ -53,6 +59,8 @@ function checkLogin(u, p) {
 
 }
 
-//console.log(checkLogin("user1","pword1"))
+
+//If the user and and password are here, why do I get false?
+//console.log(checkLogin("user1@test.com","pword1"))
 //console.log(checkLogin("user1","pword2"))
 //console.log(checkLogin("user5","pword5"))
