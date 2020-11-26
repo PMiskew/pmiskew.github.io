@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+	<!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+          
+</head>
+<body>
+
+
+	<div class = "container">
+
+
+		<a id = "displayOnce" class="waves-effect waves-light btn">Once</a>
+
+		<div class = "display">
+			<p>Once Data Display</p>
+		</div>
+
+		<input placeholder="Input Name" id="name" type="text" class="validate">
+		
+
+		<label for="name">Name</label>
+		<input placeholder="Input Food" id="food" type="text" class="validate">
+		<label for="name">Food</label>
+		
+		<br/>
+		<br/>
+		
+		<a id = "enterData" class="waves-effect waves-light btn">Submit</a>
+		<br/>
+		<br/>
+		<div id = "live">
+			<p>Live Update</p>
+			<!-- Display the content to the live update -->
+		</div>
+
+	</div>
+
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+	<!-- The core Firebase JS SDK is always required and must be listed first -->
+	<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
+
+	<!-- TODO: Add SDKs for Firebase products that you want to use
+	https://firebase.google.com/docs/web/setup#available-libraries -->
+	<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-analytics.js"></script>
+
+	<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-database.js"></script>
+
+	<script>
+	// Your web app's Firebase configuration
+	// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+	var firebaseConfig = {
+		apiKey: "AIzaSyCBR5s7HyT8CCgF0BvshuPg1_eULs0UQ94",
+		authDomain: "dpcs-firebasedemoa.firebaseapp.com",
+		databaseURL: "https://dpcs-firebasedemoa.firebaseio.com",
+		projectId: "dpcs-firebasedemoa",
+		storageBucket: "dpcs-firebasedemoa.appspot.com",
+		messagingSenderId: "517925855501",
+		appId: "1:517925855501:web:3db00cb68c00f9665c1044",
+		measurementId: "G-3B43VCMV0J"
+	};
+	// Initialize Firebase
+	firebase.initializeApp(firebaseConfig);
+	firebase.analytics();
+	var database = firebase.database();
+
+
+
+
+
+	var displayOnce = document.getElementById("displayOnce")
+	var enterData = document.getElementById("enterData")
+
+	//*****************ON EXAMPLE***********************
+	var updateDisplay = database.ref('users/');
+	
+	updateDisplay.on('value', function(snapshot) {
+		const data = snapshot.val()
+
+
+		
+		//write the code here to show the user data in the div id = live
+		let dataSTR = JSON.stringify(data);
+		console.log("**",dataSTR)
+
+		let liveDisplay = document.getElementById("live")
+		liveDisplay.innerHTML = dataSTR;
+
+	});
+
+
+	//*****************WRITE EXAMPLE***********************
+	function writeUserData(userID, name, food) {
+	  
+	  database.ref('users/'+userID).update(
+	  {
+	    name: name,
+	    food: food,
+	    
+	  });
+	}
+
+	writeUserData("02","Oliver","Pumpkin Pie")
+	function writeNewUser(name,food) {
+	
+		var postData = {
+			name: name,
+			food: food,
+		};
+
+		// Get a key for a new Post.
+		var newPostKey = firebase.database().ref().child('users').push().key;
+
+		// Write the new post's data simultaneously in the posts list and the user's post list.
+		var updates = {};
+		updates['/users/' + newPostKey] = postData;
+	
+
+		return firebase.database().ref().update(updates);
+	}
+
+	writeNewUser("U","F")
+	writeNewUser
+	function displayClick() {
+
+		console.log("clicked Display Once")
+	}
+
+	displayOnce.addEventListener("click", displayClick);
+
+
+	enterData.addEventListener("click", function() {
+
+		console.log("clicked Enter Data")
+	})
+
+
+
+
+
+
+
+
+	</script>
+</body>
+</html>
