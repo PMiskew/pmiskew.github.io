@@ -75,7 +75,62 @@
 		var database = firebase.database();
 		//var auth = firebase.auth();
 
+
+		//*********WRITE DATA********
+		function writeUserData(userId, name, food) {
+
+			data = {
+				name: name,
+				food: food,	
+			}
+
+			database.ref('users/' + userId).set(data);
+		}
+
+		writeUserData("04","Eli","Cake");
+
+		//************ON************
+		var dataChange = database.ref('users/');
 		
+		// USES ARROW FUNCTION NOTATION
+		/*
+		dataChange.on('value', (snapshot) => {
+			
+			const data = snapshot.val();
+			console.log(data)
+		});
+		*/
+
+		//writes the function in teh parameter
+		//
+		/*
+		dataChange.on('value', function(snapshot) {
+			
+			const data = snapshot.val();
+			console.log(data)
+		});
+		*/
+
+		//Write function itself
+		/*
+		function onChange(snapshot) {
+
+			const data = snapshot.val();
+			console.log(data)
+		}
+
+		dataChange.on('value',onChange);
+		*/
+
+		theFunction = function onChange(snapshot) {
+
+			const data = snapshot.val();
+			console.log(data)
+		}
+
+		dataChange.on('value',theFunction);
+
+	
 	</script>
         
 </body>
